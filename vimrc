@@ -26,6 +26,7 @@ set incsearch
 "set highlight 	" conflict with highlight current line
 set ignorecase
 set smartcase
+set hlsearch
 
 " editor settings
 set history=1000
@@ -45,7 +46,8 @@ set title                                                         " show file in
 set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
-" set relativenumber
+
+set switchbuf+=usetab,newtab
 
 " Default Indentation
 set autoindent
@@ -98,13 +100,13 @@ let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
 " tabbar
-let g:Tb_MaxSize = 2
-let g:Tb_TabWrap = 1
-
-hi Tb_Normal guifg=white ctermfg=white
-hi Tb_Changed guifg=green ctermfg=green
-hi Tb_VisibleNormal ctermbg=252 ctermfg=235
-hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
+"let g:Tb_MaxSize = 2
+"let g:Tb_TabWrap = 1
+"
+"hi Tb_Normal guifg=white ctermfg=white
+"hi Tb_Changed guifg=green ctermfg=green
+"hi Tb_VisibleNormal ctermbg=252 ctermfg=235
+"hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -148,14 +150,19 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
+let NERDTreeShowHidden = 1
+"let NERDTreeMapOpenInTab='<ENTER>'
 
-" nerdcommenter
+" nerdcommented
 let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
 
 " ZenCoding
 let g:user_zen_expandabbr_key='<C-j>'
+
+" autopep8
+"let g:autopep8_disable_show_diff=1
 
 " powerline
 "let g:Powerline_symbols = 'fancy'
@@ -193,7 +200,7 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " Keybindings for plugin toggle
 nmap <F5> :TagbarToggle<cr>
-nmap <F6> :NERDTreeToggle<cr>
+nmap <F6> :NERDTreeTabsToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
@@ -254,3 +261,12 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+
+"au FileType python set formatprg=~/pyformat.py
+"noremap <F11> gggqG
+noremap <F11> :Autoformat<CR><CR>
+
+hi Search term=standout ctermfg=yellow ctermbg=blue
