@@ -15,7 +15,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 "Bundle 'honza/snipmate-snippets'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 "Bundle 'Raimondi/delimitMate'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -23,6 +23,7 @@ Bundle 'tomtom/tlib_vim'
 
 "Bundle 'tell-k/vim-autopep8'
 Bundle "Chiel92/vim-autoformat"
+Bundle "einars/js-beautify"
 "-----------------
 " Fast navigation
 "-----------------

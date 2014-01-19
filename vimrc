@@ -47,8 +47,9 @@ set laststatus=2                                                  " use 2 lines 
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
 
-set switchbuf+=usetab,newtab
-
+map <F10> :set paste!<Enter> :set number!<Enter><F12>
+"aet switchbuf+=usetab,newtab                                      " buffer in newtab
+ 
 " Default Indentation
 set autoindent
 set smartindent     " indent when
@@ -204,7 +205,9 @@ nmap <F6> :NERDTreeTabsToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
-nnoremap <leader>a :Ack
+"ack
+"nmap <leader>a <Esc>:ack!
+nnoremap <leader>a :Ack! <Enter>
 nnoremap <leader>v V`]
 
 "------------------
@@ -262,8 +265,16 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 
+
+"vim-session
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
+
+"EasyGrep
+"let grepprg='grep -n $* /dev/null'
+"let g:EasyGrepCommand = 1
+"let g:EasyGrepRecursive = 1
+"let g:EasyGrepFilesToExclude = '*.pyc *.pyo *.o *.png *.jpg *.gif'
 
 "au FileType python set formatprg=~/pyformat.py
 "noremap <F11> gggqG
