@@ -47,7 +47,8 @@ set laststatus=2                                                  " use 2 lines 
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
 
-map <F10> :set paste!<Enter> :set number!<Enter><F12>
+" map <F10> :set paste!<Enter> :set number!<Enter><F12>
+set pastetoggle=<F10>
 "aet switchbuf+=usetab,newtab                                      " buffer in newtab
  
 " Default Indentation
@@ -169,14 +170,14 @@ let g:user_zen_expandabbr_key='<C-j>'
 "let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
-let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-set completeopt-=preview
+" let g:neocomplcache_enable_at_startup=1
+" let g:neoComplcache_disableautocomplete=1
+" "let g:neocomplcache_enable_underbar_completion = 1
+" "let g:neocomplcache_enable_camel_case_completion = 1
+" let g:neocomplcache_enable_smart_case=1
+" let g:neocomplcache_min_syntax_length = 3
+" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" set completeopt-=preview
 
 imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
@@ -281,3 +282,8 @@ let g:session_autoload = 'no'
 noremap <F11> :Autoformat<CR><CR>
 
 hi Search term=standout ctermfg=yellow ctermbg=blue
+
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+inoremap <F7> import ipdb; ipdb.set_trace()
+nnoremap <F7> oimport ipdb; ipdb.set_trace()<ESC>

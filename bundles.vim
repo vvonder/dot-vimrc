@@ -11,7 +11,8 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
+" Bundle 'Shougo/neocomplcache'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 "Bundle 'honza/snipmate-snippets'
