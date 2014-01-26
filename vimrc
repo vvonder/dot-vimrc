@@ -193,8 +193,8 @@ autocmd FileType c setlocal omnifunc=ccomplete#Complete
 
 " SuperTab
 "let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
-let g:SuperTabRetainCompletionType=2
+"let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+"let g:SuperTabRetainCompletionType=2
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
@@ -283,7 +283,10 @@ noremap <F11> :Autoformat<CR><CR>
 
 hi Search term=standout ctermfg=yellow ctermbg=blue
 
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 inoremap <F7> import ipdb; ipdb.set_trace()
 nnoremap <F7> oimport ipdb; ipdb.set_trace()<ESC>
+
+"YCM
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
