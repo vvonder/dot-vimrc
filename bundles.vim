@@ -28,7 +28,7 @@ Bundle "einars/js-beautify"
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'tsaleh/vim-matchit'
+" Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'vim-scripts/EasyGrep'
 
