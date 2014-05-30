@@ -207,7 +207,6 @@ nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
 "ack
-"nmap <leader>a <Esc>:ack!
 nnoremap <leader>a :Ack! <Enter>
 nnoremap <leader>v V`]
 
@@ -290,3 +289,19 @@ nnoremap <F7> oimport ipdb; ipdb.set_trace()<ESC>
 "YCM
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+    " ack use ag
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+    " Use ag for ctrlp
+    " let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+          " \ --ignore .git
+          " \ --ignore .svn
+          " \ --ignore .hg
+          " \ --ignore .DS_Store
+          " \ --ignore "**/*.pyc"
+          " \ -g ""'
+endif
